@@ -46,6 +46,14 @@
       "error",
       "always-multiline"
     ],
-    "no-console": "off"
+    "no-console": [
+      "off"
+    ],
+    "space-before-blocks": [
+      "error"
+    ],
+    "keyword-spacing": [
+      "error"
+    ]
   }
 }
