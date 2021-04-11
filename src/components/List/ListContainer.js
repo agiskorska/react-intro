@@ -4,9 +4,15 @@ import {getColumnsForList} from '../../redux/columnRedux';
 import {createActionAddColumn} from '../../redux/columnRedux';
 
 
-const mapStateToProps = (state, props) => ({
-  columns: getColumnsForList(state, props.id),
-});
+const mapStateToProps = (state, props) => {
+  const id = props.match.params.id;
+  const filteredLists = state.lists.filter(list => list.id == id);
+  const listParams = filteredLists[0] || {};
+  return {
+    ...listParams,
+    columns: getColumnsForList(state, id),
+  };
+};
 
 const mapDispatchToProps = (dispatch, props) => ({
   addColumn: title => dispatch(createActionAddColumn({
