@@ -1,13 +1,14 @@
 import {connect} from 'react-redux';
 import List from './List';
-import {getColumnsForList} from '../../redux/columnRedux';
-import {createActionAddColumn} from '../../redux/columnRedux';
+import {getColumnsForList, createActionAddColumn} from '../../redux/columnRedux';
+
 
 
 const mapStateToProps = (state, props) => {
   const id = props.match.params.id;
   const filteredLists = state.lists.filter(list => list.id == id);
   const listParams = filteredLists[0] || {};
+
   return {
     ...listParams,
     columns: getColumnsForList(state, id),
@@ -16,10 +17,9 @@ const mapStateToProps = (state, props) => {
 
 const mapDispatchToProps = (dispatch, props) => ({
   addColumn: title => dispatch(createActionAddColumn({
-    listId: props.id,
+    listId: props.match.params.id,
     title,
   })),
 });
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(List);

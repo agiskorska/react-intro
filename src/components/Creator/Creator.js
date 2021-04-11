@@ -19,7 +19,6 @@ class Creator extends React.Component {
   }
 
   handleChange = event => {
-    // console.log(event);
     this.setState({
       value: event.target.value,
       visibleButtons: event.target.value.length > 0,
@@ -27,7 +26,7 @@ class Creator extends React.Component {
   }
 
   handleOK = () => {
-    if(this.state.value != ''){
+    if (this.state.value != '') {
       this.props.action(this.state.value);
       this.setState({
         value: '',
