@@ -24,8 +24,8 @@
     "http-server": "^0.12.3",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-redux": "^7.0.1",
-    "react-router-dom": "^5.0.0",
+    "react-redux": "^9.0.0",
+    "react-router-dom": "^6.4.0",
     "react-router-transition": "^1.4.0",
     "redux": "^4.0.1",
     "shortid": "^2.2.16"
